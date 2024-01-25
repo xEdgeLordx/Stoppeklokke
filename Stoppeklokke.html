@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Stoppeklokke</title>
+    <style>
+        .wrapper{
+            background-color: gray;
+            height: 250px;
+            width: 250px;
+            border-radius: 10%;
+            
+        }
+        .clockbutton{
+            margin-top: 20px;
+            margin-left: 20px;
+            height: 55px;
+            width: 55px;
+        }
+        .clockDisplay{
+            height: 25px;
+            width: 50px;
+            border: 3px solid black;
+            border-radius: 10%;
+            background-color: green;
+        }
+        .roundslist{
+            background-color: antiquewhite;
+            height: 50px;
+            width: 50px;
+            border: 1px solid black;
+            font-size: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <button class="clockButton" onclick="startimer()">Start timer</button>
+        <button class="clockButton">Pause</button>
+        <button class="clockButton">Stopp og Fjern</button>
+    </div>
+    <div id="app" class="clockDisplay"></div>
+    <script>
+        const app = document.getElementById('app')
+        let seconds = 0
+        function startimer(){
+            setInterval(countSeconds, 1000);
+        }
+        function countSeconds(){
+            app.innerHTML = seconds;
+            seconds ++;
+        }
+    </script>
+</body>
+</html>

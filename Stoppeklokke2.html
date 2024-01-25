@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>stoppeklokke2</title>
+    <style>
+        .clockDisplay{
+            height: 20px;
+            width: 40px;
+            background-color: blue;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+    <button class="kloknapp" onclick="startimer()">start</button>
+    <button class="kloknapp" onclick="stoptimer()">Stopp</button>
+    <button class="kloknapp">runde</button>
+    <div id="app" class="clockDisplay"></div>
+    </div>
+    <script>
+        const app = document.getElementById('app')
+        let seconds = 0 
+        function startimer(){
+            setInterval(countseconds, 1000);
+        }
+        function countseconds(){
+            app.innerHTML = seconds;
+            seconds ++;
+        }
+        function stoptimer(){
+            
+        }
+
+    </script>
+
+</body>
+</html>
