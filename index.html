@@ -1,39 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>stoppeklokke2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Stoppeklokke.css">
+    <title>Stoppeklokke</title>
     <style>
-        .clockDisplay{
-            height: 20px;
-            width: 40px;
-            background-color: blue;
-
-        }
+       
     </style>
 </head>
 <body>
     <div class="wrapper">
-    <button class="kloknapp" onclick="startimer()">start</button>
-    <button class="kloknapp" onclick="stoptimer()">Stopp</button>
-    <button class="kloknapp">runde</button>
-    <div id="app" class="clockDisplay"></div>
+        <div class="buttonbox">
+    <button onclick="Start()">Start</button>
+    <button onclick="stop()">Stop</button>
+    <button onclick="reset()">reset</button>
+        </div>
+    <div class="display" id="display">0</div>
+    <div class="rundetid" id="runde">Rundetid:</div>
     </div>
-    <script>
-        const app = document.getElementById('app')
-        let seconds = 0 
-        function startimer(){
-            setInterval(countseconds, 1000);
-        }
-        function countseconds(){
-            app.innerHTML = seconds;
-            seconds ++;
-        }
-        function stoptimer(){
-            
-        }
-
-    </script>
-
+    <script src="Stoppeklokke.js"></script>
 </body>
 </html>
