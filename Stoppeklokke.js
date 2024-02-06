@@ -1,17 +1,30 @@
 seconds = 0;
 const disp = document.getElementById('display');
 const runde = document.getElementById('runde');
-function Start(){
-    setInterval(countsec, 1000);
+
+number = 0;
+let myTimer;
+function StartTimer(){
+    myTimer = setInterval(countseconds, 1000)
 }
-function countsec(){
-disp.innerHTML = seconds;
-seconds ++;}
-function stop(){
-    runde.innerHTML += `<li>${seconds -1}</li>`
-seconds = 0;
+function countseconds(){
+    number++;
+    disp.innerHTML = number;
 }
-function reset(){
-location.reload()
+function PauseTimer(){
+    clearInterval(myTimer);
+}
+function Lap(){
+    runde.innerHTML += /*html*/`
+    <li>${number}</li>
+    `
+}
+function ResetStopWatch(){
+    clearInterval(myTimer);
+    disp.innerHTML = "0";
+    runde.innerHTML = "Rundetid:"
+}
+function Reload(){
+    location.reload();
 
 }
